@@ -600,6 +600,13 @@ footer {
 }
 .footer-brand .nav-logo {
     font-size: 22px;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    max-width: 100%;
+    word-break: normal;
+    overflow-wrap: break-word;
+    display: block;
 }
 .footer-brand p {
     margin: 6px 0 0;
