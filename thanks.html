@@ -14,6 +14,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google tag (gtag.js) — GA4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6105N8CFKP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-6105N8CFKP');
+    </script>
+
     <style>
         .thanks-wrap {
             min-height: 75vh;
@@ -56,8 +66,15 @@
     </main>
 
     <script>
+        /* GA4 — fires the canonical lead-conversion event */
         if (typeof window.gtag === 'function') {
-            window.gtag('event', 'conversion', { send_to: 'GOOGLE_ADS_CONVERSION_ID/CONVERSION_LABEL' });
+            window.gtag('event', 'generate_lead', {
+                method: 'waitlist',
+                currency: 'USD',
+                value: 1
+            });
+            /* Add Google Ads conversion when you have it:
+            window.gtag('event', 'conversion', { send_to: 'AW-XXXXXXXXXX/CONVERSION_LABEL' }); */
         }
         if (typeof window.fbq === 'function') {
             window.fbq('track', 'CompleteRegistration');

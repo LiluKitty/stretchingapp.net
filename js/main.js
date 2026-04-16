@@ -83,16 +83,28 @@
                 if (input) input.hidden = true;
                 if (button) button.hidden = true;
                 if (success) success.hidden = false;
-                if (typeof window.gtag === 'function') {
-                    window.gtag('event', 'waitlist_signup', { method: 'email' });
+
+                var redirected = false;
+                function goToThanks() {
+                    if (redirected) return;
+                    redirected = true;
+                    window.location.href = '/thanks.html';
                 }
+
                 if (typeof window.fbq === 'function') {
                     window.fbq('track', 'Lead');
                 }
-                // Redirect to thanks page for reliable ad conversion tracking
-                setTimeout(function () {
-                    window.location.href = '/thanks.html';
-                }, 800);
+                if (typeof window.gtag === 'function') {
+                    // Use event_callback so redirect waits for GA4 to flush
+                    window.gtag('event', 'waitlist_signup', {
+                        method: 'email',
+                        event_callback: goToThanks
+                    });
+                    // Fallback in case gtag callback never fires
+                    setTimeout(goToThanks, 1200);
+                } else {
+                    setTimeout(goToThanks, 600);
+                }
             }
 
             fetch(FORMSPREE_ENDPOINT, {
