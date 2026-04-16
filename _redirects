@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# /old-path  /new-path  status-code
+
+# Remove index.html from URLs
+/index.html  /  301

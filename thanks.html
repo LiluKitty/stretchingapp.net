@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're on the list. Stretching App for Women</title>
+    <meta name="description" content="Thanks for joining the Stretching App for Women waiting list.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://stretchingapp.net/thanks.html">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .thanks-wrap {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 24px;
+            max-width: 720px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .thanks-wrap h1 {
+            font-size: clamp(40px, 6.5vw, 72px);
+            margin-bottom: 20px;
+        }
+        .thanks-wrap p {
+            font-size: 18px;
+            color: var(--ink-2);
+            max-width: 520px;
+            margin: 0 auto 32px;
+        }
+    </style>
+</head>
+<body>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+
+    <nav id="navbar">
+        <a href="/" class="nav-logo" aria-label="Stretching App for Women. Home">Stretching App <em>for&nbsp;Women</em></a>
+    </nav>
+
+    <main class="thanks-wrap">
+        <span class="eyebrow">You&rsquo;re in</span>
+        <h1>Welcome to the <em>waiting list</em>.</h1>
+        <p>We&rsquo;ll email you the moment the app is ready for you. No spam. Ever.</p>
+        <a href="/" class="btn-primary">Back to home</a>
+    </main>
+
+    <script>
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', { send_to: 'GOOGLE_ADS_CONVERSION_ID/CONVERSION_LABEL' });
+        }
+        if (typeof window.fbq === 'function') {
+            window.fbq('track', 'CompleteRegistration');
+        }
+    </script>
+</body>
+</html>

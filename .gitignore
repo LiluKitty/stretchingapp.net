@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node / local dev
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Source screenshots (keep out of public repo)
+Screenshots/
+_screenshots_orig/
