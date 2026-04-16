@@ -700,12 +700,18 @@ footer {
         padding-left: max(18px, env(safe-area-inset-left));
         padding-right: max(18px, env(safe-area-inset-right));
     }
-    .nav-logo {
+    #navbar .nav-logo {
         font-size: 17px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 58vw;
+    }
+    .footer-brand .nav-logo {
+        font-size: 18px;
+        white-space: normal;
+        overflow: visible;
+        max-width: 100%;
     }
     .nav-cta {
         padding: 9px 14px;
@@ -896,9 +902,12 @@ footer {
     #navbar {
         padding: 10px 14px;
     }
-    .nav-logo {
+    #navbar .nav-logo {
         font-size: 16px;
         max-width: 55vw;
+    }
+    .footer-brand .nav-logo {
+        font-size: 17px;
     }
     .nav-cta {
         padding: 8px 12px;
