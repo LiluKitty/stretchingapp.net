@@ -624,17 +624,24 @@ footer {
 }
 
 /* ---------- Responsive ---------- */
+
+/* Tablet and below */
 @media (max-width: 960px) {
     section {
         padding: 88px 24px;
     }
+    #navbar {
+        padding: 16px 22px;
+        padding-left: max(22px, env(safe-area-inset-left));
+        padding-right: max(22px, env(safe-area-inset-right));
+    }
     .hero {
-        padding-top: 48px;
-        padding-bottom: 88px;
+        padding-top: 40px;
+        padding-bottom: 72px;
     }
     .hero-inner {
         grid-template-columns: 1fr;
-        gap: 56px;
+        gap: 48px;
         text-align: center;
     }
     .hero-copy {
@@ -642,18 +649,18 @@ footer {
         margin: 0 auto;
     }
     .hero-sub {
-        margin: 22px auto 32px;
+        margin: 20px auto 30px;
     }
     .waitlist {
         margin: 0 auto;
         justify-content: center;
     }
     .hero-visual {
-        min-height: 480px;
+        min-height: 460px;
     }
     .showcase-row {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
         padding: 56px 0;
         text-align: center;
     }
@@ -664,58 +671,280 @@ footer {
     .showcase-text {
         margin: 0 auto;
     }
-    .pain-card {
-        text-align: left;
+    .showcase-visual .phone-frame img {
+        width: 260px;
     }
     .footer-inner {
         flex-direction: column;
         text-align: center;
+        gap: 16px;
     }
 }
 
-@media (max-width: 560px) {
-    #navbar {
-        padding: 14px 18px;
+/* Mobile: 640 and below (most phones landscape and portrait) */
+@media (max-width: 640px) {
+    html {
+        -webkit-tap-highlight-color: transparent;
     }
-    .nav-cta {
-        padding: 8px 14px;
-        font-size: 13px;
+    body {
+        font-size: 16px;
     }
     section {
-        padding: 72px 18px;
+        padding: 64px 20px;
     }
+
+    /* Navigation */
+    #navbar {
+        padding: 12px 18px;
+        padding-top: max(12px, env(safe-area-inset-top));
+        padding-left: max(18px, env(safe-area-inset-left));
+        padding-right: max(18px, env(safe-area-inset-right));
+    }
+    .nav-logo {
+        font-size: 17px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 58vw;
+    }
+    .nav-cta {
+        padding: 9px 14px;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    /* Typography */
     h1 {
-        font-size: clamp(40px, 11vw, 56px);
+        font-size: clamp(36px, 9.5vw, 52px);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        overflow-wrap: break-word;
     }
     h2 {
-        font-size: clamp(30px, 8vw, 40px);
+        font-size: clamp(28px, 7.2vw, 40px);
+        line-height: 1.12;
+        overflow-wrap: break-word;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    .section-header {
+        margin-bottom: 44px;
+    }
+    .section-sub {
+        font-size: 16px;
+    }
+
+    /* Hero */
+    .hero {
+        padding-top: 28px;
+        padding-bottom: 56px;
     }
     .hero-sub {
-        font-size: 17px;
+        font-size: 16.5px;
+        line-height: 1.5;
+        margin: 18px auto 26px;
     }
+    .eyebrow {
+        font-size: 11px;
+        padding: 7px 14px;
+        margin-bottom: 22px;
+    }
+    .hero-visual {
+        min-height: 380px;
+    }
+
+    /* Form — keep desktop-style inline layout on mobile */
     .waitlist {
-        flex-direction: column;
+        gap: 8px;
     }
-    .waitlist input[type="email"],
+    .waitlist input[type="email"] {
+        flex: 1 1 160px;
+        padding: 14px 18px;
+        font-size: 16px; /* must be 16px+ to prevent iOS zoom on focus */
+    }
     .btn-primary {
-        width: 100%;
+        padding: 14px 20px;
+        font-size: 14px;
+        gap: 8px;
+    }
+    .waitlist-note {
+        margin: 8px 0 0;
+        font-size: 12.5px;
+    }
+
+    /* Phones in hero */
+    .phone-frame {
+        border-radius: 36px;
+        padding: 8px;
     }
     .phone-frame img {
-        width: 220px;
+        border-radius: 28px;
+    }
+    .phone-hero img {
+        width: 210px;
     }
     .phone-offset {
-        right: -4%;
-        top: 4%;
+        right: -2%;
+        top: 2%;
     }
     .phone-offset img {
+        width: 160px;
+    }
+
+    /* Pain cards */
+    .why {
+        padding-bottom: 24px;
+    }
+    .pain-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .pain-card {
+        padding: 22px 22px 24px;
+        text-align: left;
+    }
+    .pain-card h3 {
+        font-size: 18px;
+    }
+    .pain-card p {
+        font-size: 14.5px;
+    }
+
+    /* Showcase rows */
+    .showcase {
+        padding-top: 24px;
+    }
+    .showcase-row {
+        gap: 32px;
+        padding: 44px 0;
+    }
+    .showcase-text h3 {
+        font-size: clamp(24px, 6.5vw, 32px);
+        line-height: 1.18;
+    }
+    .showcase-text p {
+        font-size: 16px;
+    }
+    .showcase-visual .phone-frame img {
+        width: 240px;
+    }
+    .showcase-stack {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .phone-tuck {
+        margin-left: -40px;
+        margin-top: 28px;
+    }
+    .phone-small img {
         width: 180px;
+    }
+
+    /* Promises */
+    .promises {
+        padding-top: 32px;
+        padding-bottom: 72px;
+    }
+    .promises-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .promise-card {
+        padding: 28px 24px;
+    }
+    .promise-card h3 {
+        font-size: 19px;
+    }
+    .promise-card p {
+        font-size: 14.5px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding-top: 20px;
+        padding-bottom: 96px;
+    }
+    .cta-box {
+        padding: 48px 22px;
+        border-radius: 26px;
+    }
+    .cta-box p {
+        font-size: 16px;
+        margin-bottom: 28px;
+    }
+    .waitlist-large input[type="email"] {
+        font-size: 16px;
+        padding: 14px 18px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 32px 20px 40px;
+        padding-bottom: max(40px, env(safe-area-inset-bottom));
+    }
+    .footer-brand p {
+        font-size: 13.5px;
+    }
+}
+
+/* Ultra-narrow: iPhone SE / small Androids */
+@media (max-width: 380px) {
+    section {
+        padding: 56px 16px;
+    }
+    #navbar {
+        padding: 10px 14px;
+    }
+    .nav-logo {
+        font-size: 16px;
+        max-width: 55vw;
+    }
+    .nav-cta {
+        padding: 8px 12px;
+        font-size: 12.5px;
+    }
+    h1 {
+        font-size: clamp(32px, 9vw, 40px);
+    }
+    h2 {
+        font-size: clamp(26px, 7vw, 34px);
+    }
+    .phone-hero img {
+        width: 186px;
+    }
+    .phone-offset img {
+        width: 140px;
+    }
+    .showcase-visual .phone-frame img {
+        width: 220px;
+    }
+    .phone-small img {
+        width: 160px;
     }
     .phone-tuck {
         margin-left: -30px;
-        margin-top: 30px;
     }
     .cta-box {
-        padding: 44px 22px;
+        padding: 40px 18px;
+    }
+}
+
+/* Landscape phones with short height */
+@media (max-height: 520px) and (orientation: landscape) {
+    .hero {
+        padding-top: 24px;
+        padding-bottom: 40px;
+    }
+    .hero-visual {
+        min-height: 320px;
+    }
+}
+
+/* High-DPI image sharpening */
+@media (min-resolution: 2dppx) {
+    .phone-frame img {
+        image-rendering: -webkit-optimize-contrast;
     }
 }
 
@@ -727,5 +956,8 @@ footer {
     .reveal {
         opacity: 1;
         transform: none;
+    }
+    html {
+        scroll-behavior: auto;
     }
 }
