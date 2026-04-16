@@ -22,6 +22,9 @@ yarn-error.log*
 # Logs
 *.log
 
+# Claude Code
+.claude/
+
 # Source screenshots (keep out of public repo)
 Screenshots/
 _screenshots_orig/
