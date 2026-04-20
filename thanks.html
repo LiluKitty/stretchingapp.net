@@ -13,7 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/legal.css?v=1">
 
     <!-- Google tag (gtag.js) — GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6105N8CFKP"></script>
@@ -64,6 +65,21 @@
         <p>We&rsquo;ll email you the moment the app is ready for you. No spam. Ever.</p>
         <a href="/" class="btn-primary">Back to home</a>
     </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <div class="nav-logo">Stretching App <em>for Women</em></div>
+                <p>Daily stretching for women. Less pain, more freedom, better sleep.</p>
+            </div>
+            <div class="footer-meta">
+                <span>&copy; <span id="year">2026</span> Stretching App for Women. All rights reserved.</span>
+                <span class="footer-links"><a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
     <script>
         /* GA4 — fires the canonical lead-conversion event */
