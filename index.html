@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
     <title>Stretching App for Women. Feel better in 7 minutes.</title>
-    <meta name="description" content="Daily stretching for women who want less pain, more freedom, better sleep. Join the waiting list for early access.">
+    <meta name="description" content="Daily stretching for women. Less pain, more freedom, better sleep. Download on iOS — Android coming soon.">
     <meta name="keywords" content="stretching app for women, women stretching, pregnancy stretching, postpartum recovery, flexibility, back pain relief, sleep better, mom stretching, 7 minute stretching">
     <meta name="author" content="Stretching App for Women">
     <meta name="theme-color" content="#F5EFE4">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="format-detection" content="telephone=no">
+
+    <!-- Apple Smart App Banner (auto-shown by Safari on iOS) -->
+    <meta name="apple-itunes-app" content="app-id=6762275293">
 
     <link rel="canonical" href="https://stretchingapp.net/">
 
@@ -44,7 +47,7 @@
     <!-- Preload LCP hero image -->
     <link rel="preload" as="image" href="img/screen-splash.png" fetchpriority="high">
 
-    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="css/style.css?v=7">
     <link rel="stylesheet" href="css/legal.css?v=1">
 
     <!-- =========================================================
@@ -107,29 +110,34 @@
     <!-- Minimal navigation: logo only -->
     <nav id="navbar">
         <a href="./" class="nav-logo" aria-label="Stretching App for Women. Home">Stretching App <em>for&nbsp;Women</em></a>
-        <a href="#waitlist" class="nav-cta">Join waitlist</a>
+        <a href="https://apps.apple.com/app/id6762275293" class="nav-cta" target="_blank" rel="noopener">Download</a>
     </nav>
 
     <!-- Hero -->
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-copy">
-                <span class="eyebrow">Stretching App for Women</span>
+                <span class="eyebrow">Now on iOS &middot; Android coming soon</span>
                 <h1>You carry a lot. <em>Your back shouldn't.</em></h1>
                 <p class="hero-sub">A <strong>stretching app built for women</strong>. For moms, pregnant, postpartum, desk-bound, perimenopausal. <strong>Seven minutes a day</strong> for less pain, more freedom, and the sleep you've been missing.</p>
 
-                <!-- Primary CTA: Waitlist form -->
-                <form id="waitlist-form" class="waitlist" novalidate>
-                    <label for="email-hero" class="sr-only">Your email</label>
-                    <input type="email" id="email-hero" name="email" placeholder="your@email.com" required autocomplete="email">
-                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
-                    <button type="submit" class="btn-primary">
-                        Join the waiting list
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-                    </button>
-                    <p class="waitlist-note">Be first on the list. No spam. Ever.</p>
-                    <p class="waitlist-success" hidden>You're in. We'll reach out when the app is ready for you. &#128144;</p>
-                </form>
+                <!-- Primary CTA: App Store badge + QR code -->
+                <div class="download-cta">
+                    <a href="https://apps.apple.com/app/id6762275293" class="appstore-link" target="_blank" rel="noopener" aria-label="Download on the App Store" data-track="appstore_click_hero">
+                        <img src="img/appstore-badge.svg" alt="Download on the App Store" width="160" height="54" loading="eager">
+                    </a>
+                    <div class="qr-wrap" aria-hidden="false">
+                        <img src="img/appstore-qr.png" alt="Scan to download on the App Store" width="84" height="84" loading="eager">
+                        <span class="qr-label">Scan to download</span>
+                    </div>
+                </div>
+
+                <p class="android-link-wrap">
+                    On Android?
+                    <a href="#waitlist" class="android-link">Join the waiting list
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+                    </a>
+                </p>
             </div>
 
             <div class="hero-visual" aria-hidden="true">
@@ -261,24 +269,27 @@
         </div>
     </section>
 
-    <!-- Final waitlist CTA -->
-    <section class="final-cta" id="waitlist" aria-label="Join the waiting list">
+    <!-- Android waitlist CTA -->
+    <section class="final-cta" id="waitlist" aria-label="Android waiting list">
         <div class="cta-box reveal">
-            <span class="section-label">Early access</span>
-            <h2>Be the first to feel <em>better</em>.</h2>
-            <p>Launching soon on iOS. Drop your email to get early access and founding member pricing when we open the doors.</p>
+            <span class="section-label">Android &mdash; Coming soon</span>
+            <h2>Android? <em>We haven&rsquo;t forgotten you.</em></h2>
+            <p>Drop your email and we&rsquo;ll let you know the day Stretching App lands on Google Play. No spam. Just one message.</p>
 
-            <form id="waitlist-form-2" class="waitlist waitlist-large" novalidate>
+            <form id="waitlist-form-2" class="waitlist waitlist-large" data-platform="android" novalidate>
                 <label for="email-final" class="sr-only">Your email</label>
                 <input type="email" id="email-final" name="email" placeholder="your@email.com" required autocomplete="email">
+                <input type="hidden" name="platform" value="android">
                 <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;pointer-events:none;">
                 <button type="submit" class="btn-primary">
-                    Join the waiting list
+                    Notify me on Android
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
                 </button>
-                <p class="waitlist-note">One email when we launch. Nothing else.</p>
-                <p class="waitlist-success" hidden>You're in. We'll reach out when the app is ready for you. &#128144;</p>
+                <p class="waitlist-note">One email when Android launches. Nothing else.</p>
+                <p class="waitlist-success" hidden>You're on the list. We'll tell you the moment Android is live. &#128144;</p>
             </form>
+
+            <p class="cta-aside">Already on iPhone? <a href="https://apps.apple.com/app/id6762275293" target="_blank" rel="noopener">Download on the App Store &rarr;</a></p>
         </div>
     </section>
 

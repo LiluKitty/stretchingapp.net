@@ -49,6 +49,21 @@
             max-width: 520px;
             margin: 0 auto 32px;
         }
+        .thanks-aside {
+            margin-top: 32px !important;
+            font-size: 14.5px !important;
+            color: var(--mute) !important;
+        }
+        .thanks-aside a {
+            font-weight: 600;
+            color: var(--sage-deep);
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+        .thanks-aside a:hover {
+            color: var(--sage-dark);
+            border-bottom-color: var(--sage-deep);
+        }
     </style>
 </head>
 <body>
@@ -60,10 +75,11 @@
     </nav>
 
     <main class="thanks-wrap">
-        <span class="eyebrow">You&rsquo;re in</span>
-        <h1>Welcome to the <em>waiting list</em>.</h1>
-        <p>We&rsquo;ll email you the moment the app is ready for you. No spam. Ever.</p>
+        <span class="eyebrow">You&rsquo;re on the list</span>
+        <h1>Android, <em>we&rsquo;re coming</em>.</h1>
+        <p>We&rsquo;ll email you the moment Stretching App lands on Google Play. No spam. Ever.</p>
         <a href="/" class="btn-primary">Back to home</a>
+        <p class="thanks-aside">Have an iPhone? <a href="https://apps.apple.com/app/id6762275293" target="_blank" rel="noopener">Download now on the App Store &rarr;</a></p>
     </main>
 
     <footer>
@@ -86,6 +102,7 @@
         if (typeof window.gtag === 'function') {
             window.gtag('event', 'generate_lead', {
                 method: 'waitlist',
+                platform: 'android',
                 currency: 'USD',
                 value: 1
             });

@@ -51,6 +51,7 @@
         var button = form.querySelector('button[type="submit"]');
         var note = form.querySelector('.waitlist-note');
         var success = form.querySelector('.waitlist-success');
+        var platform = form.dataset.platform || 'android';
 
         form.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -98,6 +99,7 @@
                     // Use event_callback so redirect waits for GA4 to flush
                     window.gtag('event', 'waitlist_signup', {
                         method: 'email',
+                        platform: platform,
                         event_callback: goToThanks
                     });
                     // Fallback in case gtag callback never fires
@@ -113,7 +115,7 @@
                     'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 },
-                body: JSON.stringify({ email: email, source: 'waitlist' })
+                body: JSON.stringify({ email: email, source: 'waitlist', platform: platform })
             })
                 .then(function (res) {
                     if (!res.ok) throw new Error('Submission failed');
@@ -129,8 +131,21 @@
         });
     }
 
-    setupForm(document.getElementById('waitlist-form'));
     setupForm(document.getElementById('waitlist-form-2'));
+
+    // ------- App Store link tracking -------
+    document.querySelectorAll('[data-track="appstore_click_hero"], .nav-cta[href*="apps.apple.com"], .cta-aside a[href*="apps.apple.com"]').forEach(function (a) {
+        a.addEventListener('click', function () {
+            if (typeof window.gtag === 'function') {
+                window.gtag('event', 'appstore_click', {
+                    location: a.dataset.track ? 'hero' : (a.classList.contains('nav-cta') ? 'nav' : 'cta_aside')
+                });
+            }
+            if (typeof window.fbq === 'function') {
+                window.fbq('track', 'ViewContent', { content_name: 'App Store' });
+            }
+        });
+    });
 
     // ------- Smooth anchor with offset for sticky nav -------
     document.querySelectorAll('a[href^="#"]').forEach(function (a) {
